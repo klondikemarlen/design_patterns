@@ -14,3 +14,10 @@ class LowerCaseInputStream(io.IOBase):
 input_stream = LowerCaseInputStream(io.TextIOWrapper(io.FileIO("test.txt")))
 print(input_stream.read())
 
+"""
+Should probably just do:
+with open("test.txt") as f:
+    for line in f:
+        print(line)
+"""
+
