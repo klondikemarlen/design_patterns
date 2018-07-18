@@ -1,0 +1,2 @@
+I know the Decorator Pattern and HOW it's used in the Python 'io' package.
+Though honestly I have no idea if this is how it is supposed to be used.

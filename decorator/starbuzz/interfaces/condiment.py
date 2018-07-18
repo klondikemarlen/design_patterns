@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from decorator.interfaces.beverage import Beverage
+from decorator.starbuzz.interfaces.beverage import Beverage
 
 
 class CondimentDecorator(Beverage, ABC):

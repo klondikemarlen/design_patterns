@@ -1,5 +1,5 @@
-from decorator.coffees import Espresso, DarkRoast, HouseBlend
-from decorator.condiments import Mocha, Whip, Soy
+from decorator.starbuzz.coffees import Espresso, DarkRoast, HouseBlend
+from decorator.starbuzz.condiments import Mocha, Whip, Soy
 
 
 beverage = Espresso()

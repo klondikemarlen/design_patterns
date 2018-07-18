@@ -1,4 +1,4 @@
-from decorator.interfaces.condiment import CondimentDecorator
+from decorator.starbuzz.interfaces.condiment import CondimentDecorator
 
 
 class Mocha(CondimentDecorator):
