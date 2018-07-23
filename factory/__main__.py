@@ -1,4 +1,11 @@
 from factory.pizza_store.ny_style import NYStylePizzaStore
+from factory.pizza_store.chicago_style import ChicagoStylePizzaStore
 
-pizza_store = NYStylePizzaStore()
-pizza_store.ordering_pizza("cheese")
+ny_store = NYStylePizzaStore()
+chicago_store = ChicagoStylePizzaStore()
+
+pizza = ny_store.ordering_pizza("cheese")
+print("Ethan ordered a {}.\n".format(pizza.name))
+
+pizza = chicago_store.ordering_pizza("cheese")
+print("Joel ordered a {}.\n".format(pizza.name))
