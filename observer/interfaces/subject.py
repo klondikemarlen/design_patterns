@@ -44,10 +44,10 @@ class Observable(Subject):
         self.observers.remove(ob)
 
     def notify_observers(self, *args):
-        if self._changed:
+        if self.changed:
             for ob in reversed(self.observers):
                 ob.update(self, *args)
-        self._changed = False
+        self.clear_changed()
 
     def set_changed(self):
         self._changed = True
