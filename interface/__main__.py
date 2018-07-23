@@ -7,5 +7,5 @@ mallard.perform_fly()
 
 model = ModelDuck()
 model.perform_fly()
-model.set_fly_behavior(FlyRocketPowered())
+model.fly_behavior = FlyRocketPowered()
 model.perform_fly()

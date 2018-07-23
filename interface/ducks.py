@@ -5,24 +5,23 @@ from interface.fly_behaviors import FlyWithWings, FlyNoWay
 
 
 class Duck(abc.ABC):
+    """Duck that implements arbitrary fly and quack behaviors.
+
+    NOTE on set/get in python:
+    In the simplest use case you don't need these methods in Python!
+    Using a method allows for more complex modifications than simple assignment.
+
     def set_fly_behavior(self, fb):
-        self._fly_behavior = fb
+        print("Duck transformed!")
+        self.fly_behavior = fb
 
-    def set_quack_behavior(self, qb):
-        self._quack_behavior = qb
-
-    @property
-    def fly_behavior(self):
-        return self._fly_behavior
-
-    @property
-    def quack_behavior(self):
-        return self._quack_behavior
+    duck.set_fly_behavior(ExampleFlyBehavior())
+    """
 
     @abc.abstractmethod
     def __init__(self):
-        self._fly_behavior = None
-        self._quack_behavior = None
+        self.fly_behavior = None
+        self.quack_behavior = None
 
     @abc.abstractmethod
     def display(self):
@@ -41,8 +40,8 @@ class Duck(abc.ABC):
 class MallardDuck(Duck):
     def __init__(self):
         super().__init__()
-        self._fly_behavior = FlyWithWings()
-        self._quack_behavior = Quack()
+        self.fly_behavior = FlyWithWings()
+        self.quack_behavior = Quack()
 
     def display(self):
         print("I'm a real Mallard duck.")
@@ -51,8 +50,8 @@ class MallardDuck(Duck):
 class ModelDuck(Duck):
     def __init__(self):
         super().__init__()
-        self._fly_behavior = FlyNoWay()
-        self._quack_behavior = Quack()
+        self.fly_behavior = FlyNoWay()
+        self.quack_behavior = Quack()
 
     def display(self):
         print("I'm a model duck.")
