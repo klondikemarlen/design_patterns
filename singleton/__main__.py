@@ -8,6 +8,7 @@ class A(Singleton):
 class B(Singleton):
     pass
 
+
 class C(Singleton):
     pass
 
@@ -19,7 +20,7 @@ c, c2 = C(), C()
 assert a is a2
 assert b is b2
 assert c is c2
-assert a is not b is not c
+assert a is not b and a is not c and b is not c
 
 print('a:  {}\na2: {}'.format(a, a2))
 print('b:  {}\nb2: {}'.format(b, b2))
