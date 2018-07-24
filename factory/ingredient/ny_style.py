@@ -19,3 +19,14 @@ class NYPizzaIngredientFactory(PizzaIngredientFactory):
 
     def create_clam(self):
         return FreshClam()
+
+
+class ThinCrustDough: pass
+class MarinaraSauce: pass
+class ReggianoCheese: pass
+class Garlic: pass
+class Onion: pass
+class Mushroom: pass
+class RedPepper: pass
+class SlicedPepperoni: pass
+class FreshClam: pass

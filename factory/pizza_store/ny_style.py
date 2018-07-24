@@ -1,5 +1,8 @@
 from factory.pizza_store.generic import PizzaStore
-from factory.pizza.generic import CheesePizza, PepperoniPizza, ClamPizza, VeggiePizza
+from factory.pizza.veggie import VeggiePizza
+from factory.pizza.clam import ClamPizza
+from factory.pizza.pepperoni import PepperoniPizza
+from factory.pizza.cheese import CheesePizza
 from factory.ingredient.ny_style import NYPizzaIngredientFactory
 
 

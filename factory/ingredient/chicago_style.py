@@ -3,7 +3,7 @@ from factory.ingredient.generic import PizzaIngredientFactory
 
 class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
     def create_dough(self):
-        return ThikCrustDough()
+        return ThickCrustDough()
 
     def create_sauce(self):
         return PlumTomatoSauce()
@@ -19,3 +19,13 @@ class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
 
     def create_clam(self):
         return FrozenClam()
+
+
+class ThickCrustDough: pass
+class PlumTomatoSauce: pass
+class Mozzarella: pass
+class Spinach: pass
+class BlackOlives: pass
+class EggPlant: pass
+class SlicedPepperoni: pass
+class FrozenClam: pass
