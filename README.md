@@ -3,7 +3,7 @@
 ### Notes:
 This is a 'work in progress' that doesn't include many extra exercises.
 
-Run any module by doing `python3 example_module` (or just 'python example_module' if you only have one version). This will run the file called '\_\_main\_\_' in that module. NOTE: a python module is just a folder that contains a '\_\_init\_\_.py' file. This file can be (and often is) blank.
+Run any module by doing `python3 example_module` (or just 'python example_module' if you only have one python). This will run the file called '\_\_main\_\_' in that module. NOTE: a python module is just a folder that contains a '\_\_init\_\_.py' file. This file can be (and often is) blank.
 
 Note on get/set methods in Python:
 - you don't need them in the simplest use case in Python.
@@ -26,23 +26,23 @@ class Quest:
 
 class Journal:
     def __init__(self):
-        self._quests = []
+        self._quests = []  # semi-private _
 
-    def add_quest(self, quest):
+    def add_quest(self, quest):  # complex use case requiring set style
         """quests 'set' method."""
         quest.active = True
         self._quests.append(quest)
 
     @property
-    def quests(self):
+    def quests(self):  # sem-private @property
         """Unmodifiable 'quests' attribute."""
         return self._quests
 
-    def get_active_quests(self):
+    def get_active_quests(self):  # fancy get
         """Returns only active quests."""
         return [quest for quest in self._quests if quest.active]
 
-    def get_inactive_quests(self):
+    def get_inactive_quests(self):  # fancy get
         """Returns only inactive quests."""
         return [quest for quest in self._quests if not quest.active]
 
@@ -69,4 +69,4 @@ print(hero.journal.get_inactive_quests())
 ```
 
 ### More notes:
-While you could put all the code for every pattern in just one file, I decided to use python module style. It is easy to use and breaks up large files full of code into lots of smaller files with just a little code. I have been told by those wiser than myself ... noticed in my own practice that this saves a great deal of effort in the long run. On a personal note I tend to write in a single file ... then migrate it to modules as a tidying up process.
+While you could put all the code for every pattern in just one file, I decided to use python module style. It is easy to use and breaks up large files full of code, into lots of smaller files with just a little code. I have been told by those wiser than myself ... and noticed in my own practice that this saves a great deal of effort in the long run. On a personal note I tend to write in a single file ... then migrate it to modules as a tidying up process.
