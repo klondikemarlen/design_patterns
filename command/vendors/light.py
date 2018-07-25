@@ -3,7 +3,7 @@ class Light:
         self.name = name
 
     def on(self):
-        print("Light is On.")
+        print("{} Light is On.".format(self.name))
 
     def off(self):
-        print("Light is Off.")
+        print("{} Light is Off.".format(self.name))

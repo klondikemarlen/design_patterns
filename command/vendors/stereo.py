@@ -3,20 +3,20 @@ class Stereo:
         self.name = name
 
     def on(self):
-        print("Stereo is On.")
+        print("{} Stereo is On.".format(self.name))
 
     def off(self):
-        print("Stereo is Off.")
+        print("{} Stereo is Off.".format(self.name))
 
     def set_cd(self):
-        print("Stereo is set to CD.")
+        print("{} Stereo is set to CD.".format(self.name))
 
     def set_dvd(self):
-        print("Stereo is set to DVD.")
+        print("{} Stereo is set to DVD.".format(self.name))
 
     def set_radio(self):
-        print("Stereo is set to Radio.")
+        print("{} Stereo is set to Radio.".format(self.name))
 
     def set_volume(self, level):
-        print("Stereo Volume is set to {}.".format(level))
+        print("{} Stereo Volume is set to {}.".format(self.name, level))
 

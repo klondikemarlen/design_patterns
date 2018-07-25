@@ -36,3 +36,16 @@ class NoCommand(Command):
 
     def undo(self):
         pass
+
+
+class MacroCommand(Command):
+    def __init__(self, *commands):
+        self.commands = commands
+
+    def execute(self):
+        for command in self.commands:
+            command.execute()
+
+    def undo(self):
+        for command in self.commands:
+            command.undo()

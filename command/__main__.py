@@ -1,23 +1,39 @@
 from command.remote import RemoteControlWithUndo
-from command.vendors.ceiling_fan import CeilingFan
-from command.interface.ceiling_fan import CeilingFanMediumCommand, CeilingFanHighCommand, CeilingFanOffCommand
+from command.vendors.light import Light
+from command.vendors.tv import TV
+from command.vendors.stereo import Stereo
+from command.vendors.hot_tub import HotTub
+from command.interface.light import LightOnCommand, LightOffCommand
+from command.interface.stereo import StereoOnWithCDCommand, StereoOffCommand
+from command.interface.tv import TVOnCommand, TVOffCommand
+from command.interface.hot_tub import HotTubOnCommand, HotTubOffCommand
+from command.interface.generic import MacroCommand
 
 remote_control = RemoteControlWithUndo()
 
-ceiling_fan = CeilingFan("Living Room")
+light = Light("Living Room")
+tv = TV("Living Room")
+stereo = Stereo("Living Room")
+hot_tub = HotTub()
 
-ceiling_fan_medium = CeilingFanMediumCommand(ceiling_fan)
-ceiling_fan_high = CeilingFanHighCommand(ceiling_fan)
-ceiling_fan_off = CeilingFanOffCommand(ceiling_fan)
+light_on = LightOnCommand(light)
+stereo_on = StereoOnWithCDCommand(stereo)
+tv_on = TVOnCommand(tv)
+hot_tub_on = HotTubOnCommand(hot_tub)
 
-remote_control.set_command(0, ceiling_fan_medium, ceiling_fan_off)
-remote_control.set_command(1, ceiling_fan_high, ceiling_fan_off)
+light_off = LightOffCommand(light)
+stereo_off = StereoOffCommand(stereo)
+tv_off = TVOffCommand(tv)
+hot_tub_off = HotTubOffCommand(hot_tub)
 
+party_on_macro = MacroCommand(light_on, stereo_on, tv_on, hot_tub_on)
+pary_off_macro = MacroCommand(light_off, stereo_off, tv_off, hot_tub_off)
+
+remote_control.set_command(0, party_on_macro, pary_off_macro)
+
+print(remote_control)
+print("--- Pushing Macro On ---")
 remote_control.on_button_was_pressed(0)
+print("--- Pushing Macro Off ---")
 remote_control.off_button_was_pressed(0)
-print(remote_control)
-remote_control.undo_button_was_pressed()
 
-remote_control.on_button_was_pressed(1)
-print(remote_control)
-remote_control.undo_button_was_pressed()
