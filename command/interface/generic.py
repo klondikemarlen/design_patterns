@@ -24,3 +24,8 @@ class Command(ABC):
         """
 
         return str(self.__class__).split("'")[1]
+
+
+class NoCommand(Command):
+    def execute(self):
+        pass
