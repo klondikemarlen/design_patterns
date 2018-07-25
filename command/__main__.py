@@ -27,9 +27,9 @@ tv_off = TVOffCommand(tv)
 hot_tub_off = HotTubOffCommand(hot_tub)
 
 party_on_macro = MacroCommand(light_on, stereo_on, tv_on, hot_tub_on)
-pary_off_macro = MacroCommand(light_off, stereo_off, tv_off, hot_tub_off)
+party_off_macro = MacroCommand(light_off, stereo_off, tv_off, hot_tub_off)
 
-remote_control.set_command(0, party_on_macro, pary_off_macro)
+remote_control.set_command(0, party_on_macro, party_off_macro)
 
 print(remote_control)
 print("--- Pushing Macro On ---")
