@@ -6,6 +6,10 @@ class Command(ABC):
     def execute(self):
         pass
 
+    @abstractmethod
+    def undo(self):
+        pass
+
     def get_class_name(self):
         """Return a package.module.class style name variable.
 
@@ -28,4 +32,7 @@ class Command(ABC):
 
 class NoCommand(Command):
     def execute(self):
+        pass
+
+    def undo(self):
         pass
