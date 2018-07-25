@@ -34,8 +34,8 @@ class Journal:
         self._quests.append(quest)
 
     @property
-    def quests(self):  # sem-private @property
-        """Unmodifiable 'quests' attribute."""
+    def quests(self):  # simple get, using sem-private @property
+        """Unmodifiable get 'quests' attribute."""
         return self._quests
 
     def get_active_quests(self):  # fancy get
