@@ -6,7 +6,7 @@ from adapter.vendors.projector import Projector
 from adapter.vendors.screen import Screen
 from adapter.vendors.theatre_lights import TheatreLights
 from adapter.vendors.popcorn_popper import PopcornPopper
-from adapter.home_theatre_example.home_theatre import HomeTheatreFacade
+from adapter.home_theatre_facade_example.home_theatre import HomeTheatreFacade
 
 
 def test_home_theatre():
